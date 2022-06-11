@@ -120,3 +120,8 @@ font-family: 'Nanum Myeongjo', serif;
 #home-body{
     background:white;
 }
+
+.settings{
+    background:linear-gradient(to right, #cbb4d4, #20002c, #cbb4d4); 
+    padding:30px;
+}

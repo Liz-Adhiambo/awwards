@@ -1,0 +1,40 @@
+{%extends 'base.html'%}
+{% load static %}
+
+{%block content%}
+<body>
+
+{% include 'navbar.html'%}
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			
+			<div class="col">
+				<div>
+					<img class="rounded-circle" src="{{user_profile.profileimg.url}}" style="height: 200px; " alt="">
+				</div>
+				<div>
+				 <h3>@{{user_profile.user.username}}</h3>
+				
+				 <br>
+				
+			   
+				  {{user_profile.bio}}
+                  <br>
+                  First Name: {{user_profile.user.first_name}}
+                  <br>
+                  Last  Name: {{user_profile.user.last_name}}
+			    </div>
+			</div>
+		</div>
+			
+		
+
+				
+
+</div>
+<hr>
+
+
+
+{%endblock content%}
