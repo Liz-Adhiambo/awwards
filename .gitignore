@@ -1,0 +1,3 @@
+award-venv/
+*pyc
+award_project/settings.py
