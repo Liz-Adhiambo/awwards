@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+
+
+{% block content %}
+{% include 'navbar.html'%}
+<!-- content -->
+<br><br><br>
+<div class="container">
+  <div class="single_post-container row">
+    <div class="col-md-6 image-container">
+      <img src="{{project.project_image.url}}" alt class="card-img-top"/>
+      
+    </div>
+    <div class="col-md-6 comments-container">
+      <div class="user">
+        <div class="image">
+          <img src="{{project.user_profile.profileimg.url}}" alt="" />
+        </div>
+        <div class="user_name ml-1 mb-2">{{project.user}}</div>
+      </div>
+      <hr />
+      <div class="post">
+        
+        <p class="post_caption">{{project.caption}}</p>
+        <a href={{ project.Project_url }}>{{ project.project_url }}</a>
+
+      </div>
+      
+{% endblock%}

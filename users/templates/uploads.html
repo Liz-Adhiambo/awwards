@@ -1,0 +1,50 @@
+{%extends 'base.html'%}
+{% load static %}
+
+
+
+
+{%block content%}
+<div class="container">
+<img
+            src={%static 'assets1/logo.png'%}
+            height="70"
+            alt=""
+            loading="lazy"
+          />
+        </a>
+        
+        <a class="text-reset me-3" href="/">
+            <i class="fas fa-home fa-2x"></i>
+        </a>
+</div>
+<div class='container shadow'>
+
+    <form action="upload" method="POST" enctype="multipart/form-data" >
+    {% csrf_token %}
+    <p class="my-3 leading-6"> Upload pics
+        <br>
+        <i class="fas fa-file-upload fa-10x"></i>
+    </p>
+    <div>
+        
+        <input type="file" name="image_upload">
+        <!-- <a href="#" class="button soft-warning small"> Choose file</a> --><br>
+        <br>
+        <textarea class="form-control" name="caption" placeholder="caption..." ></textarea>
+        <br>
+        <input type="url" name="project_url" placeholder="Please enter your projects live site">
+        <br>
+        <input type="url" name="project_repo" placeholder="Enter project repo">
+        <br>
+        <button class="btn" type="submit" >Upload</button>
+        <button class="btn"> <a href="/">Cancel</a> </button>
+    </div>
+    </form>
+
+</div>
+
+    {%endblock content%}
+
+
+</body>
