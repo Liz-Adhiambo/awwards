@@ -1,0 +1,81 @@
+{%extends 'base.html'%}
+{% load static %}
+
+{%block content%}
+
+
+        <!-- Content-->
+
+    <div>
+            <div>
+                <style>
+                    h5{
+                        color: red;
+                    }
+                </style>
+                {% for message in messages %}
+                <h5>{{message}}</h5>
+                {% endfor %}
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md">
+                    <img src={%static 'assets1/mobile-app.png'%}>
+                    </div>
+                    <div class="col-md">
+                        <div class='container'>
+                        <div class="card">
+                            <div class="card-header">
+                                
+                                
+                            </div>
+                            <div class="card-body">
+                                <form action="" method="POST">
+                                    {% csrf_token %}
+                                    
+                                    <input type="text" name="username" placeholder="Username" class="form-control" style="border: 1px solid #d3d5d8 !important;">
+                                    <br>
+                                    <input type="text" name="first_name" placeholder="First name" class="form-control" style="border: 1px solid #d3d5d8 !important;">
+                                    <br>
+                                    <input type="text" name="last_name" placeholder="Last name" class="form-control" style="border: 1px solid #d3d5d8 !important;">
+                                    <br>
+                                    <input type="email" name="email" placeholder="Email" class="form-control" style="border: 1px solid #d3d5d8 !important;">
+                                    <br>
+                                    <input type="password" name="password" placeholder="Password" class="form-control">
+                                    <br>
+                                    <input type="password" name="password2" placeholder="Confirm Password" class="form-control" style="border: 1px solid #d3d5d8 !important;">
+                                    <br>
+                                    
+                                    <button type="submit" class="btn btn-primary btn-lg" style='height: 50px; width:500px'>Sign Up</button>
+                                    <div class="text-center mt-5 space-x-2">
+                                        <p class="text-base"> Do you have an account? <a href=""> Login </a></p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                            
+                    </div>
+                </div>
+                
+            </div>
+            
+        
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+{%endblock content%}
