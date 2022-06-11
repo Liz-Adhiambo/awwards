@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+.oswald{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h4{
+    font-size:2em;
+}
+#p{
+    font-size:1.3em;
+    line-height:1.1em;
+}
+.card {
+  width: 100%; 
+  height: 300px;
+  color:#D6D600;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  background-color: black; /* fallback color */
+  background-position: center;
+  background-size: cover;
+  transition:all 0.3s ease-in-out;
+  opacity:1;
+}
+.card:hover .card-img,
+.card:focus .card-img {
+  transform: scale(1.02);
+  opacity:0.5;
+}
+
+.card:hover .card-img-overlay{
+    color:#730d0d;
+}
+
+.card-img-overlay>h4, .card-img-overlay>p{
+    visibility:hidden;
+}
+
+.card-img-overlay:hover h4, .card-img-overlay:hover p{
+    visibility: visible;
+}
+
+.card:hover .card-img-overlay p{
+    font-size:1.5em;
+    letter-spacing:0.02em;
+}
+
+
+/*footer starts here*/
+
+/* Sticky footer position and size
+-------------------------------------------------- */
+body{
+    
+/* background: linear-gradient(to right, #636FA4, #E8CBC0); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    
+background: linear-gradient(to right, #cbb4d4, #20002c, #cbb4d4); 
+font-family: 'Nanum Myeongjo', serif;
+    
+}
+
+.about{
+    background: #f3eef5;
+}
+
+
+
+.carousel-item,
+.carousel-inner,
+.carousel-inner img {
+  height: 100%;
+  width: 1300px;
+}
+
+.carousel-item {
+  text-align: center;
+}
+
+.carousel {
+    height: 300px;
+  }
+  
+.fas{color:#e9ddee}
+
+.break{
+    background:#f3eef5;
+    text-align: center;
+    
+    
+    
+}
+
+
+.logo{
+    font-family: 'Great Vibes', cursive;
+}
+
+#h-page{
+    background:white;
+    text-align: center;
+    
+    
+    
+}
+#home-nav{
+    
+    /* background: linear-gradient(to right, #636FA4, #E8CBC0); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+        
+    background: linear-gradient(to right, #cbb4d4, #20002c, #cbb4d4); 
+    font-family: 'Nanum Myeongjo', serif;
+        
+    }
+
+#home-body{
+    background:white;
+}
