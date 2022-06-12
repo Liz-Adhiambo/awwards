@@ -14,8 +14,8 @@
       </ul>
 
       <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-dark me-2">Login</button>
-        <button type="button" class="btn btn-outline-dark">Sign-up</button>
+        <a href={% url 'signin' %}><button type="button" class="btn btn-outline-dark me-2">Login</button></a>
+        <a href={% url 'signup' %}><button type="button" class="btn btn-outline-dark me-2">Sign Up</button></a>
       </div>
     </header>
   </div>
@@ -24,10 +24,16 @@
   <div class="container-fluid " id="h-page">
         <div class='row'>
             <div class='col'>
-                <img src='/images/image2.jpg' alt='image' style='width:500px height:300px'>
+                <img src={% static 'images/image2.jpg'%} alt='image' style='width:500px height:300px'>
             </div>
             <div class='col'>
-                col2
+                <br>
+                <br>
+                <br>
+                <h1><span class='logo'>L-</span>Awwards</h1>
+                <p>A project is complete when it starts working <br>for you rather than you working for it</p>
+                <small>~To view and add projects sign in!</small>
+                <a href={% url 'signin' %}><button type="button" class="btn btn-outline-dark me-2">Login</button></a>
 
             </div>
         </div>    
@@ -40,18 +46,36 @@
   <br>
 
 
-  <div class="container-fluid " id="h-page">
+  <div class="container " id="h-page">
+    <h2>About Us</h2>
     <div class='row'>
         <div class='col'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis sodales ex, sit amet facilisis orci. Vivamus at tempor nisl. Nunc pharetra orci quis orci rhoncus ullamcorper. Integer et eleifend lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed et arcu leo. Suspendisse eget sollicitudin sem. Vestibulum gravida tellus a mi pretium pharetra. Fusce et consequat arcu. Pellentesque aliquet imperdiet lacus, eget rhoncus erat cursus ut. Maecenas metus felis, efficitur luctus blandit porttitor, euismod id ipsum. Sed risus augue, rhoncus eget est id, feugiat vehicula nunc. Proin molestie sem erat, a dictum massa mattis vitae. Nam eros erat, egestas a tempor vel, pretium ut justo. Cras sagittis tristique quam vitae dapibus. Quisque non ex faucibus, ultricies libero eu, tempus nisi.
+            <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                  <h5 class="card-title">Warning card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
         </div>
         <div class='col'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis sodales ex, sit amet facilisis orci. Vivamus at tempor nisl. Nunc pharetra orci quis orci rhoncus ullamcorper. Integer et eleifend lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed et arcu leo. Suspendisse eget sollicitudin sem. Vestibulum gravida tellus a mi pretium pharetra. Fusce et consequat arcu. Pellentesque aliquet imperdiet lacus, eget rhoncus erat cursus ut. Maecenas metus felis, efficitur luctus blandit porttitor, euismod id ipsum. Sed risus augue, rhoncus eget est id, feugiat vehicula nunc. Proin molestie sem erat, a dictum massa mattis vitae. Nam eros erat, egestas a tempor vel, pretium ut justo. Cras sagittis tristique quam vitae dapibus. Quisque non ex faucibus, ultricies libero eu, tempus nisi.
+            <div class="card text-dark bg-warning mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                  <h5 class="card-title">Warning card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
 
         </div>
         <div class='col'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis sodales ex, sit amet facilisis orci. Vivamus at tempor nisl. Nunc pharetra orci quis orci rhoncus ullamcorper. Integer et eleifend lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed et arcu leo. Suspendisse eget sollicitudin sem. Vestibulum gravida tellus a mi pretium pharetra. Fusce et consequat arcu. Pellentesque aliquet imperdiet lacus, eget rhoncus erat cursus ut. Maecenas metus felis, efficitur luctus blandit porttitor, euismod id ipsum. Sed risus augue, rhoncus eget est id, feugiat vehicula nunc. Proin molestie sem erat, a dictum massa mattis vitae. Nam eros erat, egestas a tempor vel, pretium ut justo. Cras sagittis tristique quam vitae dapibus. Quisque non ex faucibus, ultricies libero eu, tempus nisi.
-
+            <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                  <h5 class="card-title">Warning card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
         </div>
     </div>    
 
