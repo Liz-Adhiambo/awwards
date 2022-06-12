@@ -5,6 +5,8 @@ from django.contrib.auth import get_user_model
 
 
 
+
+
 class Project(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     user = models.CharField(max_length=100)
@@ -17,3 +19,4 @@ class Project(models.Model):
 
     def __str__(self):
         return self.user
+
