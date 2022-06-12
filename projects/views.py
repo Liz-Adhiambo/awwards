@@ -8,6 +8,8 @@ from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from itertools import chain
+
+from users.models import Profile
 from.models import  Project
 # Create your views here.
 
@@ -51,3 +53,24 @@ def view_post(request,pk):
         
         }   
     return render(request,'view_project.html',context)
+
+def projects(request):
+    
+    
+    images = Project.objects.all()
+
+    
+    # feed = []
+
+    
+    
+    # feed_lists = Project.objects.all()
+    # feed.append(feed_lists)
+
+    # feed_list = list(chain(*feed))
+
+   
+    
+    
+
+    return render(request,'projects.html' ,{"images":images,})
