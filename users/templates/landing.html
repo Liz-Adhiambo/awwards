@@ -2,8 +2,8 @@
 {% load static %}
 {% block content%}
 <div class="container" id='home-nav'>
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom shadow-lg p-3   rounded">
-        <li><a href="#" class="nav-link px-2 link-secondary"><span class='logo'>L-</span>Awwards</a></li>
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom ">
+        <p><a href="#" class="nav-link px-2 link-secondary"><span class='logo'>L-</span>Awwards</a></p>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
@@ -31,9 +31,9 @@
                 <br>
                 <br>
                 <h1><span class='logo'>L-</span>Awwards</h1>
-                <p>A project is complete when it starts working <br>for you rather than you working for it</p>
-                <small>~To view and add projects sign in!</small>
-                <a href={% url 'signin' %}><button type="button" class="btn btn-outline-dark me-2">Login</button></a>
+                <p>A project is complete when <br>it starts working for you <br>rather <br>than you working for it</p>
+                <small>~To view and add projects sign in!</small><br>
+                <a href={% url 'signin' %}><button type="button" class="btn btn-outline-dark mt-5"style='width: 200px;'>Check it out!</button></a>
 
             </div>
         </div>    
@@ -50,7 +50,7 @@
     <h2>About Us</h2>
     <div class='row'>
         <div class='col'>
-            <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
+            <div class="card text-dark" style="max-width: 18rem; background:rgb(238, 209, 232); " id="about-cards">
                 <div class="card-header">Header</div>
                 <div class="card-body">
                   <h5 class="card-title">Warning card title</h5>
@@ -59,7 +59,7 @@
               </div>
         </div>
         <div class='col'>
-            <div class="card text-dark bg-warning mb-3" style="max-width: 18rem;">
+            <div class="card   mb-3" style="max-width: 18rem; background: rgb(31, 3, 25);">
                 <div class="card-header">Header</div>
                 <div class="card-body">
                   <h5 class="card-title">Warning card title</h5>
@@ -69,7 +69,7 @@
 
         </div>
         <div class='col'>
-            <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
+            <div class="card text-dark  mb-3" style="max-width: 18rem; background:rgb(238, 209, 232);" >
                 <div class="card-header">Header</div>
                 <div class="card-body">
                   <h5 class="card-title">Warning card title</h5>

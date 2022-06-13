@@ -1,0 +1,44 @@
+{%extends 'base.html'%}
+{% load static %}
+
+
+{%block content%}
+<body>
+    {%include 'navbar.html'%}
+            
+    <h3 style='text-align:center;'>
+    Welcome <b name="" class="">{{user.username}}&nbsp; &nbsp; &nbsp;</b> Here are your search results</h3>
+<div class="container" >
+   
+        {% for users in username_profile_list %}
+        <div class="card mb-3 mr-5" style="max-width: 540px; ">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <a class="image-link" href="/profile/{{users.user}}">
+                <img
+                  src="{{users.profileimg.url}}"
+                  alt="Trendy Pants and Shoes"
+                  class="img-fluid rounded-start"
+                />
+                </a>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">@{{users.user}}</h5>
+                  <p class="card-text">
+                    {{users.location}}
+                    <p>
+                    {{users.bio}}</p>
+                  </p>
+                  <p class="card-text">
+                    <small class="text-muted"></small>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %} 
+
+ {%endblock content%}
+</div>
+  

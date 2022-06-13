@@ -14,7 +14,7 @@ h4{
 .card {
   width: 100%; 
   height: 300px;
-  color:#D6D600;
+  
 }
 
 .card-img {
@@ -59,7 +59,7 @@ body{
 /* background: linear-gradient(to right, #636FA4, #E8CBC0); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     
-background: linear-gradient(to right, #cbb4d4, #20002c, #cbb4d4); 
+background: linear-gradient(to right, #cbb4d4, #20002c, #20002c); 
 font-family: 'Nanum Myeongjo', serif;
     
 }
@@ -98,7 +98,10 @@ font-family: 'Nanum Myeongjo', serif;
 
 .logo{
     font-family: 'Great Vibes', cursive;
+    color:orangered
 }
+
+
 
 #h-page{
     background:white;
@@ -112,7 +115,7 @@ font-family: 'Nanum Myeongjo', serif;
     /* background: linear-gradient(to right, #636FA4, #E8CBC0); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
         
-    background: linear-gradient(to right, #cbb4d4, #20002c, #cbb4d4); 
+    background: linear-gradient(to right, #cbb4d4, #20002c, #20002c); 
     font-family: 'Nanum Myeongjo', serif;
         
     }
@@ -122,6 +125,94 @@ font-family: 'Nanum Myeongjo', serif;
 }
 
 .settings{
-    background:linear-gradient(to right, #cbb4d4, #20002c, #cbb4d4); 
+    background:linear-gradient(to right, #cbb4d4, #20002c, #20002c); 
     padding:30px;
 }
+
+#about-cards{
+    background:rgb(238, 209, 232)
+
+}
+
+/* .circle{
+    position:relative;
+    width:150px;
+    height:150px;
+    background:linear-gradient(#33ccff,#ff0066);
+    border-radius:50%;
+    
+} */
+
+.circular{
+    height:100px;
+    width: 100px;
+    position: relative;  
+    border:solid white 1px;
+  }
+
+  .circular .inner{
+    position: absolute;
+    z-index: 6;
+    top: 50%;
+    left: 50%;
+    height: 80px;
+    width: 80px;
+    margin: -40px 0 0 -40px;
+    background: rgb(250, 244, 244);
+    border-radius: 100%;
+  }
+
+  .circular .number{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index:10;
+    font-size:18px;
+    font-weight:500;
+    color:#4158d0;
+  }
+
+  .circular .bar{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    -webkit-border-radius: 100%;
+            border-radius: 100%;
+    clip: rect(0px, 100px, 100px, 50px);
+  }
+
+  .circle .bar .progress{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -webkit-border-radius: 100%;
+            border-radius: 100%;
+    clip: rect(0px, 50px, 100px, 0px);
+    background: #4158d0;
+  }
+
+  .circle .left .progress{
+    z-index:1;
+    animation: left 4s linear both;
+  }
+  @keyframes left{
+    100%{
+      transform: rotate(180deg);
+    }
+  }
+  .circle .right {
+    transform: rotate(180deg);
+    z-index:3;
+   
+  }
+  .circle .right .progress{
+    animation: right 4s linear both;
+    animation-delay:4s;
+  }
+  @keyframes right{
+    100%{
+      transform: rotate(180deg);
+    }
+  }

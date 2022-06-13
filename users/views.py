@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from.models import Profile
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def landing(request):
@@ -57,7 +58,7 @@ def signin(request):
 
         if user is not None:
             auth.login(request, user)
-            return redirect('settings')
+            return redirect('projects')
         else:
             messages.info(request, 'Credentials Invalid')
             return redirect('signin')
@@ -65,10 +66,12 @@ def signin(request):
     else:
         return render(request, 'signin.html')
 
+@login_required(login_url='signin')
 def logout(request):
     auth.logout(request)
     return redirect('signin')
-    
+
+@login_required(login_url='signin')    
 def settings(request):
     user_profile = Profile.objects.get(user=request.user)
 
@@ -96,10 +99,11 @@ def settings(request):
         return redirect('settings')
     return render(request, 'profile_setting.html', {'user_profile': user_profile})
 
+@login_required(login_url='signin')
 def uploads(request):
     return render(request,'uploads.html')
 
-
+@login_required(login_url='signin')
 def profile(request, pk):
     user_object = User.objects.get(username=pk)
     user_profile = Profile.objects.get(user=user_object)
