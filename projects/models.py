@@ -2,7 +2,9 @@ from datetime import datetime
 import uuid
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 
+from users.views import Profile
 
 
 
@@ -16,7 +18,22 @@ class Project(models.Model):
     project_repo=models.URLField(null=True,blank=True)
     created_at = models.DateTimeField(default=datetime.now)
     no_of_likes = models.IntegerField(default=0)
-
+    
     def __str__(self):
         return self.user
 
+    def delete_project(self):
+      self.delete()
+
+class Rating(models.Model):
+    '''
+    This model will contain the ratings for diffrent categories
+    '''
+    design = models.IntegerField(choices=[(i,i) for i in range(1,11)])
+    usability = models.IntegerField(choices=[(i,i) for i in range(1,11)])
+    content = models.IntegerField(choices=[(i,i) for i in range(1,11)])
+    project = models.ForeignKey(Project,on_delete=models.CASCADE)
+    user = models.ForeignKey(User,on_delete=models.CASCADE) 
+
+    def __str__(self):
+        return self.user.username
