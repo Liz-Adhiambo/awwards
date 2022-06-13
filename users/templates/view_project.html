@@ -23,7 +23,130 @@
         
         <p class="post_caption">{{project.caption}}</p>
         <a href={{ project.Project_url }}>{{ project.project_url }}</a>
+        <a href="{% url 'rate-project' project.id %}" class="waves-effect waves-light btn"><i class="material-icons left">star</i>Rate</a>
+        <div class='circle'>
+          <b>{{ reviews_avg.design__avg }}</b> by <b>{{ reviews_count }}</b> people
 
+        </div>
       </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class='container'>
+  <div class="row">
+    <div class="col">
+      <div class=" circular">
+        <div class="inner"></div>
+        <div class="number"><b>{{ reviews_avg.design__avg }}</div>
+          
+        <div class="circle">
+           <div class="bar left">
+              <div class="progress"></div>
+           </div>
+           <div class="bar right">
+              <div class="progress"></div>
+           </div>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='container'>
+  <div class="row">
+    <div class="col">
+      <div class=" circular">
+        <div class="inner"></div>
+        <div class="number"><b>{{ ureviews_avg.usability__avg }}</div>
+          
+        <div class="circle">
+           <div class="bar left">
+              <div class="progress"></div>
+           </div>
+           <div class="bar right">
+              <div class="progress"></div>
+           </div>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='container'>
+  <div class="row">
+    <div class="col">
+      <div class=" circular">
+        <div class="inner"></div>
+        <div class="number"><b>{{ creviews_avg.content__avg }}</div>
+          
+        <div class="circle">
+           <div class="bar left">
+              <div class="progress"></div>
+           </div>
+           <div class="bar right">
+              <div class="progress"></div>
+           </div>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    
+
+      
+        
+        
+        
+  
+
+
+<div class="container">
+  <h4>Reviews</h4>
+  <div class="row">
+    <div class="col">User</div>
+    <div class="col">Design</div>
+    <div class="col">Usabitity</div>
+    <div class="col">Content</div>
+  </div>
+  <hr>
+
+  {% for review in reviews %}
+    <p class="collection-item avatar">
+
+    {% if review.user.profile.picture %}
+      <img src="{{ review.user.profile.profileimg.url }}" alt="" class="circle">
+    {% else %}
+      <img src="" alt="" >
+    {% endif %}
+    
+
+    <div class="row">
+      <div class="col"><b>{{review.user.username}}{{ review.user.first_name }} {{ review.user.last_name }}</b></div>
+      <div class="col">{{ review.design }} / 10</div>
+      <div class="col">{{ review.usability }} / 10</div>
+      <div class="col">{{ review.content }} / 10</div>
+    </div>
+
+  {% endfor %}
+
+</div>              
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+
       
 {% endblock%}
