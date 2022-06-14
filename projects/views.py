@@ -50,9 +50,9 @@ def upload(request):
         new_post = Project.objects.create(user=user,project_tittle=project_tittle, project_image=project_image, caption=caption,project_url=project_url,project_repo=project_repo)
         new_post.save()
 
-        return redirect('/')
+        return redirect('projects')
     else:
-        return redirect('/')
+        return redirect('projects')
 
 @login_required(login_url='signin')
 def view_post(request,pk):
@@ -117,7 +117,7 @@ def projects(request):
 
     return render(request,'projects.html' ,{"images":images,'user_profile': user_profile,})
 
-
+@login_required(login_url='signin')
 def Rate(request, pk):
 	project = Project.objects.get(id=pk)
 	user = request.user
@@ -147,27 +147,27 @@ def Rate(request, pk):
 	return HttpResponse(template.render(context, request))
 
 
-@login_required(login_url='signin')
-def search(request):
-    user_object = User.objects.get(username=request.user.username)
-    user_profile = Profile.objects.get(user=user_object)
+# @login_required(login_url='signin')
+# def search(request):
+#     user_object = User.objects.get(username=request.user.username)
+#     user_profile = Profile.objects.get(user=user_object)
 
-    if request.method == 'POST':
-        username = request.POST['username']
-        username_object = User.objects.filter(username__icontains=username)
+#     if request.method == 'POST':
+#         username = request.POST['username']
+#         username_object = User.objects.filter(username__icontains=username)
 
-        username_profile = []
-        username_profile_list = []
+#         username_profile = []
+#         username_profile_list = []
 
-        for users in username_object:
-            username_profile.append(users.id)
+#         for users in username_object:
+#             username_profile.append(users.id)
 
-        for ids in username_profile:
-            profile_lists = Profile.objects.filter(id_user=ids)
-            username_profile_list.append(profile_lists)
+#         for ids in username_profile:
+#             profile_lists = Profile.objects.filter(id_user=ids)
+#             username_profile_list.append(profile_lists)
         
-        username_profile_list = list(chain(*username_profile_list))
-    return render(request, 'search.html', {'user_profile': user_profile, 'username_profile_list': username_profile_list})
+#         username_profile_list = list(chain(*username_profile_list))
+#     return render(request, 'search.html', {'user_profile': user_profile, 'username_profile_list': username_profile_list})
 
 
 class ProjectList(APIView):
@@ -175,5 +175,19 @@ class ProjectList(APIView):
         all_projects = Project.objects.all()
         serializers = ProjectSerializer(all_projects, many=True)
         return Response(serializers.data)
+        
+@login_required(login_url='signin')
+def search(request):
+    project_objects = Project.objects.all()
+    user_object = request.user
+    user_profile = Profile.objects.get(user=user_object)
 
-    
+    if request.method == 'POST':
+        project = request.POST['project']
+        project_objects = Project.objects.all()
+
+        
+        
+        
+        
+    return render(request, 'search.html', {'project_object': project_objects,'user_profile': user_profile})
