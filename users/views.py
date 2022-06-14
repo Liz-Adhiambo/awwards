@@ -3,6 +3,13 @@ from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from.models import Profile
 from django.contrib.auth.decorators import login_required
+
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializer import ProfileSerializer
+from rest_framework import status
+
+
 # Create your views here.
 
 def landing(request):
@@ -108,7 +115,6 @@ def profile(request, pk):
     user_object = User.objects.get(username=pk)
     user_profile = Profile.objects.get(user=user_object)
     
-
     
     context = {
         'user_object': user_object,
@@ -117,4 +123,10 @@ def profile(request, pk):
     }
     return render(request, 'profile.html', context)
 
-   
+class ProfileList(APIView):
+    def get(self, request, format=None):
+        all_profiles = Profile.objects.all()
+        serializers = ProfileSerializer(all_profiles, many=True)
+        return Response(serializers.data)
+
+    
