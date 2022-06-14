@@ -9,6 +9,8 @@ from rest_framework.views import APIView
 from .serializer import ProfileSerializer
 from rest_framework import status
 
+from django.apps import apps
+Project=apps.get_model('projects','Project')
 
 # Create your views here.
 
@@ -114,12 +116,17 @@ def uploads(request):
 def profile(request, pk):
     user_object = User.objects.get(username=pk)
     user_profile = Profile.objects.get(user=user_object)
-    
+    user_posts = Project.objects.filter(user=pk)
+    user_post_length = len(user_posts)
+
+    images = Project.objects.filter(user=pk)
     
     context = {
         'user_object': user_object,
         'user_profile': user_profile,
-        
+        'user_projects': user_posts,
+        'user_post_length': user_post_length,
+        'images':images
     }
     return render(request, 'profile.html', context)
 

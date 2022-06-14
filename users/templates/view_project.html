@@ -22,7 +22,10 @@
       <div class="post">
         
         <p class="post_caption">{{project.caption}}</p>
-        <a href={{ project.Project_url }}>{{ project.project_url }}</a>
+        <strong>view live site:</strong>   <button class='btn btn-outline text-dark'><a href={{ project.project_url }}>{{ project.project_url }}</a></button><br>
+        <br>
+        <strong>Go to github repo: </strong> <button class='btn btn-outline text-dark'><a href={{ project.project_repo }}>{{ project.project_repo}}</a></button> <br>
+
         <a href="{% url 'rate-project' project.id %}" class="waves-effect waves-light btn"><button class="btn btn-outline-dark">Review</button></a>
         <div class='circle'>
           <b>{{ reviews_avg.design__avg }}</b> by <b>{{ reviews_count }}</b> people
@@ -40,7 +43,7 @@
     <div class="col-sm">
       <div class=" circular">
         <div class="inner"></div>
-        <div class="number">Design{{ reviews_avg.design__avg }}</div>
+        <div class="number">Design <br>{{ reviews_avg.design__avg }}</div>
           
         <div class="circle">
            <div class="bar left">
@@ -70,7 +73,7 @@
     <div class="col-sm">
       <div class=" circular">
         <div class="inner"></div>
-        <div class="number">Content{{ creviews_avg.content__avg }}</div>
+        <div class="number">Content<br>{{ creviews_avg.content__avg }}</div>
           
         <div class="circle">
            <div class="bar left">
@@ -119,7 +122,7 @@
     
 
     <div class="row">
-      <div class="col"><b>{{review.user.username}}{{ review.user.first_name }} {{ review.user.last_name }}</b></div>
+      <div class="col"><b>{{review.user.username}} {{ review.user.last_name }}</b></div>
       <div class="col">{{ review.design }} / 10</div>
       <div class="col">{{ review.usability }} / 10</div>
       <div class="col">{{ review.content }} / 10</div>
