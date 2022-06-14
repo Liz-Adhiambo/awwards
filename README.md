@@ -13,6 +13,10 @@
 <img src="static/images/awards2.png">
 <img src="static/images/awards3.png">
 
+### API screenshot
+<img src="static/images/awardsjson.png">
+
+
 ## Project Description
 
 This is a clone of the popular awwwards app  built using Python - Django.
@@ -34,9 +38,7 @@ BDD focuses on how the user will interact with the application. What users will 
 4.Users can rate the project and also see what other users have rated the project.<br>
 5. After clicking the rate button User will be directed to the ratig page where they'll see a wider view of the project, scroll to the rate form and rate the project based on design, userbility and content out of ten.<br>
 4.Users can also  access a project's live link or the github repository.<br>
-5.Click on the upload project svg to add a project for others to view or the avatar icon to add a new project.<br>
-
-
+5.Click on the upload project svg to add a project for others to view or the avatar icon to add a new project.<b>
 
 ## Getting Started
 
