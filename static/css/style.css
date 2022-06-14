@@ -92,7 +92,7 @@ h4{
 .card:hover .card-img,
 .card:focus .card-img {
   transform: scale(1.02);
-  opacity:0.5;
+  opacity:0.8;
 }
 
 .card:hover .card-img-overlay{
@@ -162,8 +162,11 @@ font-family: 'Nanum Myeongjo', serif;
     
 }
 .card-bodie{
-    background-color: #fff;
-    color:black
+  background: linear-gradient(to right, #cbb4d4, #20002c, #20002c); 
+    color:rgb(252, 244, 244);
+    border-width:2px;
+border-style:solid;
+border-color:black;
 }
 
 
@@ -254,7 +257,7 @@ font-family: 'Nanum Myeongjo', serif;
     z-index:10;
     font-size:18px;
     font-weight:500;
-    color:#4158d0;
+    color:rgb(31, 17, 24);
   }
 
   .circular .bar{
@@ -274,7 +277,7 @@ font-family: 'Nanum Myeongjo', serif;
     -webkit-border-radius: 100%;
             border-radius: 100%;
     clip: rect(0px, 50px, 100px, 0px);
-    background: #4158d0;
+    background: linear-gradient(to right, #c50909, #9e0d86, #da1e92); 
   }
 
   .circle .left .progress{
