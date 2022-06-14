@@ -28,13 +28,13 @@ This is a clone of the popular awwwards app  built using Python - Django.
 ## Behaviour Driven Development
 BDD focuses on how the user will interact with the application. What users will see and experience:
 
-1.Landing page with the Information about the page in the about section.
-2. Users can login if they already have an acount or alternatively sign up.
-3.After loging in users will be redirected to the home page where they can view different projects.A user can hover on the image and click on the view project button to be directed to the individual project page.
-4.Users can rate the project and also see what other users have rated the project.
-5. After clicking the rate button User will be directed to the ratig page where they'll see a wider view of the project, scroll to the rate form and rate the project based on design, userbility and content out of ten.
-4.Users can also  access a project's live link or the github repository.
-5.Click on the upload project svg to add a project for others to view or the avatar icon to add a new project.
+1.Landing page with the Information about the page in the about section.<br>
+2. Users can login if they already have an acount or alternatively sign up.<br>
+3.After loging in users will be redirected to the home page where they can view different projects.A user can hover on the image and click on the view project button to be directed to the individual project page.<br>
+4.Users can rate the project and also see what other users have rated the project.<br>
+5. After clicking the rate button User will be directed to the ratig page where they'll see a wider view of the project, scroll to the rate form and rate the project based on design, userbility and content out of ten.<br>
+4.Users can also  access a project's live link or the github repository.<br>
+5.Click on the upload project svg to add a project for others to view or the avatar icon to add a new project.<br>
 
 
 
