@@ -23,7 +23,7 @@
         
         <p class="post_caption">{{project.caption}}</p>
         <a href={{ project.Project_url }}>{{ project.project_url }}</a>
-        <a href="{% url 'rate-project' project.id %}" class="waves-effect waves-light btn"><i class="material-icons left">star</i>Rate</a>
+        <a href="{% url 'rate-project' project.id %}" class="waves-effect waves-light btn"><button class="btn btn-outline-dark">Review</button></a>
         <div class='circle'>
           <b>{{ reviews_avg.design__avg }}</b> by <b>{{ reviews_count }}</b> people
 
@@ -33,14 +33,44 @@
   </div>
 </div>
 
-
-
-<div class='container'>
+<hr>
+<h6 style="text-align:center">Total Average Scores<h6>
+<div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col-sm">
       <div class=" circular">
         <div class="inner"></div>
-        <div class="number"><b>{{ reviews_avg.design__avg }}</div>
+        <div class="number">Design{{ reviews_avg.design__avg }}</div>
+          
+        <div class="circle">
+           <div class="bar left">
+              <div class="progress"></div>
+           </div>
+           <div class="bar right">
+              <div class="progress"></div>
+           </div>
+         </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class=" circular">
+        <div class="inner"></div>
+        <div class="number">Usability<br>{{ ureviews_avg.usability__avg }}</div>
+          
+        <div class="circle">
+           <div class="bar left">
+              <div class="progress"></div>
+           </div>
+           <div class="bar right">
+              <div class="progress"></div>
+           </div>
+         </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class=" circular">
+        <div class="inner"></div>
+        <div class="number">Content{{ creviews_avg.content__avg }}</div>
           
         <div class="circle">
            <div class="bar left">
@@ -55,45 +85,8 @@
   </div>
 </div>
 
-<div class='container'>
-  <div class="row">
-    <div class="col">
-      <div class=" circular">
-        <div class="inner"></div>
-        <div class="number"><b>{{ ureviews_avg.usability__avg }}</div>
-          
-        <div class="circle">
-           <div class="bar left">
-              <div class="progress"></div>
-           </div>
-           <div class="bar right">
-              <div class="progress"></div>
-           </div>
-         </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<div class='container'>
-  <div class="row">
-    <div class="col">
-      <div class=" circular">
-        <div class="inner"></div>
-        <div class="number"><b>{{ creviews_avg.content__avg }}</div>
-          
-        <div class="circle">
-           <div class="bar left">
-              <div class="progress"></div>
-           </div>
-           <div class="bar right">
-              <div class="progress"></div>
-           </div>
-         </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 
     
@@ -106,7 +99,7 @@
 
 
 <div class="container">
-  <h4>Reviews</h4>
+  <h4 style="text-align:center;">Reviews</h4>
   <div class="row">
     <div class="col">User</div>
     <div class="col">Design</div>

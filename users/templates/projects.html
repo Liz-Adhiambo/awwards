@@ -7,23 +7,23 @@
 <body>
    
     {%include 'navbar.html'%}
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" syle='height:100px,width:100px'>
+    {% comment %} <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" syle='height:100px,width:100px'>
                     
         <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-        <div class="carousel-inner"syle='height:100px'>
+        <div class="carousel-inner">
             
         <div class="carousel-item active">
-            <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" class="d-block w-100 " alt="..."syle='height:100px'>
+            <img src={%static 'images/project2.jpg'%} class="d-block w-100 " alt="..."syle='height:100px'>
             
-            <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" class="d-block w-100" alt="...">
+            <img src={%static 'images/project3.jpeg'%} class="d-block w-100" alt="...">
             
         </div>
         <div class="carousel-item">
-            <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" class="d-block w-100" alt="...">
+            <img src={%static 'images/project3.jpeg'%} class="d-block w-100" alt="...">
             
         </div>
         </div>
@@ -36,8 +36,11 @@
         <span class="visually-hidden">Next</span>
         </button>
     </div>
-    
-
+     {% endcomment %}
+     <div class="col-md-6">
+        <img src={%static 'images/Image1r.jpg'%} style="height:90%; width:90%;">
+     </div>
+     
     
  {% for image in images reversed %}
     
@@ -45,7 +48,7 @@
 
 <div class='break'>
     <br>
-   <h6> Here are Today's specials<h6>
+   <h6 class='hech6'> Here are Today's specials<h6>
     <br>
 <!--Another section for cards-->
     
@@ -54,38 +57,51 @@
         <div class="container p-3">
             <div class="row">
                 <div class=" col-md-4">
-                    <div class="card mb-3">
+                    <div class="card">
+                    <div class="card-img" style="background-image:url({{image.project_image.url}});"></div>    
+                    <div class="card-img-overlay d-flex flex-column justify-content-between">
+                        <h4 class="card-title"><a href={% url 'viewpost' image.id%}><br><button type="button" class="btn btn-rounded btn-outline-dark">View project</button></a></h4>
+                        
+                    </div>
+                    </div>
+                    <div class="card-bodie">
+                        creator :{{image.user}}
+                        <p>{{image.caption}}</p>
+                        <div>
+                        
+                        <p>{{image.created_at}}</p>
+                        </div>
+                        
+                        
+                      </div>
+                </div>
+
+
+                {% comment %} <div class=" col-md-4">
+                    <div class="card ">
                     <div class="card-img" style="background-image:url({{image.project_image.url}});"></div>    
                     <div class="card-img-overlay d-flex flex-column justify-content-between">
                         <h4 class="card-title"><a href={% url 'viewpost' image.id%}><button type="button" class="btn btn-outline-dark">View</button></a>@{{image.user}}</h4>
                         
                     </div>
+                   
+                    <div class="card-bodie">
+                        <p>{{image.caption}}</p>
+                        <div>
+                        <span class="badge rounded-pill  bg-info">Info</span> 
+                        <p>{{image.created_at}}</p>
+                        </div>
+                        
+                        
+                        
+                      
                     </div>
-                    <div class="card-body">
-                        
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        
-                      </div>
-                </div>
-                <div class=" col-md-4">
-                    <div class="card mb-3">
-                    <div class="card-img" style="background-image:url({{image.project_image.url}});"></div>    
-                    <div class="card-img-overlay d-flex flex-column justify-content-between">
-                        <h4 class="card-title"><a href={% url 'viewpost' image.id%}><button type="button" class="btn btn-outline-dark">View</button></a>@{{image.user}}</h4>
-                        
-                    </div>
-                    </div>
-                    <div class="card-body">
-                        
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        
-                      </div>
-                </div>
-            </div>
+                </div> {% endcomment %}
             </div>
             
+            
         </div>
-        
+    </div> 
       
   
 
