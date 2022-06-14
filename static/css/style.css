@@ -1,5 +1,51 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 
+.btn-outline {
+    color: #fafdfd;
+   
+    border-color: orangered;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+  }
+
+  .btn-outline {
+    color: #f3f7f6;
+    
+    border-color: orangered;
+    font-weight: bold;
+    border-radius: 0;
+  }
+  
+  .btn-outline:hover,
+  .btn-outline:active,
+  .btn-outline:focus,
+  .btn-outline.active {
+    background: orangered;
+    color: #ffffff;
+    
+    
+  }
+
+  .link-dark{
+    color:rgb(255, 251, 249)
+  }
+
+  .btn-outline-dark {
+    color: #f3f7f6;
+    background: orangered;
+    border-color: orangered;
+    font-weight: bold;
+    border-radius: 0;
+  }
+
+
+
+
+
+
+
+
+
 .oswald{
     font-family: 'Josefin Sans', sans-serif;
 }
@@ -64,9 +110,6 @@ font-family: 'Nanum Myeongjo', serif;
     
 }
 
-.about{
-    background: #f3eef5;
-}
 
 
 
@@ -88,11 +131,16 @@ font-family: 'Nanum Myeongjo', serif;
 .fas{color:#e9ddee}
 
 .break{
-    background:#f3eef5;
+    background:#20002c;
     text-align: center;
+    color:#ffffff
     
     
     
+}
+.card-bodie{
+    background-color: #fff;
+    color:black
 }
 
 
@@ -125,13 +173,26 @@ font-family: 'Nanum Myeongjo', serif;
 }
 
 .settings{
-    background:linear-gradient(to right, #cbb4d4, #20002c, #20002c); 
+    background:linear-gradient(to right, #cbb4d4, #2c1400, #20002c); 
     padding:30px;
 }
 
 #about-cards{
-    background:rgb(238, 209, 232)
+    background:#20002c;
+    
+}
+#about-card2{
+    background:orangered;
+    
+}
 
+.card-body{
+    color:rgb(253, 250, 249);
+
+}
+
+.hech6{
+    background:#20002c;
 }
 
 /* .circle{
