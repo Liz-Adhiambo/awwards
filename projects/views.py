@@ -13,6 +13,17 @@ from django.db.models import Avg
 from users.models import Profile
 from.models import  Project, Rating
 from itertools import chain
+
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializer import ProjectSerializer
+from rest_framework import status
+
+
+
+
+
+
 # Create your views here.
 
 
@@ -24,16 +35,19 @@ def uploads(request):
 
 @login_required(login_url='signin')
 def upload(request):
+    
 
     if request.method == 'POST':
         user = request.user.username
+        project_tittle=request.POST['project_tittle']
         project_image = request.FILES.get('image_upload')
         caption = request.POST['caption']
         project_url = request.POST['project_url']
         project_repo = request.POST['project_repo']
+        
 
 
-        new_post = Project.objects.create(user=user, project_image=project_image, caption=caption,project_url=project_url,project_repo=project_repo)
+        new_post = Project.objects.create(user=user,project_tittle=project_tittle, project_image=project_image, caption=caption,project_url=project_url,project_repo=project_repo)
         new_post.save()
 
         return redirect('/')
@@ -44,6 +58,12 @@ def upload(request):
 def view_post(request,pk):
     # post_id = request.GET.get('id')
     project = Project.objects.get(id=pk)
+
+    user_object = request.user
+    user_profile = Profile.objects.get(user=user_object)
+
+
+
 
     ratings = Rating.objects.filter(project=project)
     reviews_avg = ratings.aggregate(Avg('design'))
@@ -68,14 +88,16 @@ def view_post(request,pk):
 		
         'ureviews_avg':ureviews_avg,
         'creviews_avg':creviews_avg,
-        'reviews_count': reviews_count
+        'reviews_count': reviews_count,
+        'user_profile': user_profile
         }   
     return render(request,'view_project.html',context)
 
   
 @login_required(login_url='signin')
 def projects(request):
-    
+    user_object = request.user
+    user_profile = Profile.objects.get(user=user_object)
     
     images = Project.objects.all()
 
@@ -93,7 +115,7 @@ def projects(request):
     
     
 
-    return render(request,'projects.html' ,{"images":images})
+    return render(request,'projects.html' ,{"images":images,'user_profile': user_profile,})
 
 
 def Rate(request, pk):
@@ -146,3 +168,12 @@ def search(request):
         
         username_profile_list = list(chain(*username_profile_list))
     return render(request, 'search.html', {'user_profile': user_profile, 'username_profile_list': username_profile_list})
+
+
+class ProjectList(APIView):
+    def get(self, request, format=None):
+        all_projects = Project.objects.all()
+        serializers = ProjectSerializer(all_projects, many=True)
+        return Response(serializers.data)
+
+    
