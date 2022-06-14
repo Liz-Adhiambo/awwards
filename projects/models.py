@@ -4,7 +4,9 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 
-from users.views import Profile
+from users.models import Profile
+
+
 
 
 
@@ -12,6 +14,7 @@ from users.views import Profile
 class Project(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     user = models.CharField(max_length=100)
+    project_tittle=models.CharField(max_length=50,blank=True)
     project_image = models.ImageField(upload_to='project_images')
     caption = models.TextField()
     project_url=models.URLField(null=True,blank=True)
