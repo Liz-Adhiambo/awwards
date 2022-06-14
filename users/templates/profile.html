@@ -2,7 +2,7 @@
 {% load static %}
 
 {%block content%}
-<body>
+
 
 {% include 'navbar.html'%}
 <div class="container">
@@ -27,7 +27,17 @@
 			    </div>
 			</div>
 		</div>
-			
+		{% if user_post_length == 0 %}
+		<p style=" font-size: 27px;"><b>No Project yet</b></p>
+		{% elif user_post_length == 1 %}
+		<span style=" font-size: 27px;"><b> {{user_post_length}} Project  </b>
+		{% else %}
+		<span style=" font-size: 27px;"><b>{{user_post_length}}</b> Projects</span>
+		{% endif %}
+
+		
+		
+	</div>
 		
 
 				
@@ -35,6 +45,12 @@
 </div>
 <hr>
 
-
+<div class="container mb-3">
+	{% for project in user_projects %}
+	<!-- Button trigger modal -->
+	<a class="strip" href="" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
+		<img src="{{project.project_image.url}}" style="height: 250px; width: 300px;" alt=""></a>
+   {% endfor %}
+</div>
 
 {%endblock content%}
