@@ -82,6 +82,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CSRF_TRUSTED_ORIGINS = ['*']
+
 ROOT_URLCONF = 'award_project.urls'
 
 TEMPLATES = [
