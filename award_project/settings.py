@@ -55,7 +55,6 @@ ALLOWED_HOSTS = ['awwards-production.up.railway.app']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-CSRF_TRUSTED_ORIGINS = ['https://awwards-production.up.railway.app']
 
 # Application definition
 
@@ -83,7 +82,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://web-production-7bc0.up.railway.app']
+
+CSRF_TRUSTED_ORIGINS = ['https://awwards-production.up.railway.app']
 
 ROOT_URLCONF = 'award_project.urls'
 
