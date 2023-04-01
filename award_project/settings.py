@@ -51,7 +51,7 @@ DATABASES = {
 # db_from_env = dj_database_url.config(conn_max_age=500)
 # DATABASES['default'].update(db_from_env)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['awwards-production.up.railway.app']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
