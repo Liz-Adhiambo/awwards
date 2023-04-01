@@ -55,7 +55,7 @@ ALLOWED_HOSTS = ['awwards-production.up.railway.app']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-
+CSRF_TRUSTED_ORIGINS = ['https://awwards-production.up.railway.app']
 
 # Application definition
 
